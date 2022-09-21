@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-for i in range(97,123):
-    letter = chr(i)
-    if letter not in "qe":
-     print(f"{chr(i)}", end="")
+for c in range(ord('a'), ord('z') + 1):
+    if c != ord('e') and c != ord('q'):
+        print("{:c}".format(c), end="")
