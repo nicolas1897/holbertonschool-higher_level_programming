@@ -1,6 +1,10 @@
 #!/usr/bin/python3
-class Square():
-    '''
-        An empty square class
-    '''
+"""
+Module 0-square
+Defines class Square
+"""
+
+
+class Square:
+    """Empty class"""
     pass
