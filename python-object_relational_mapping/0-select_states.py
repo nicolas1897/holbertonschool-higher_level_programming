@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-import sys "prueba prueba"
+-- Create states table in hbtn_0e_0_usa with some data
+import sys 
 import MySQLdb
 
 
