@@ -1,5 +1,4 @@
 #!/usr/bin/python3
--- Create states table in hbtn_0e_0_usa with some data
 import sys
 import MySQLdb
 
