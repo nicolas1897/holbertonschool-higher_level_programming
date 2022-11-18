@@ -1,5 +1,8 @@
 #!/usr/bin/python3
--- Create states table in hbtn_0e_0_usa with some data
+'''
+This module lists all states from the database hbtn_0e_0_usa
+sorted in ascending order by states.id
+'''
 import sys 
 import MySQLdb
 
