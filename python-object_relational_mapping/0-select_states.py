@@ -1,12 +1,29 @@
 #!/usr/bin/python3
-# lists all states from the database hbtn_0e_0_usa
-import MySQLdb as mdb
-from sys import argv
+import sys
+import MySQLdb
+
+
+def get_states(username, password, db_name):
+    '''
+        List all the states in the given database
+    '''
+    db = MySQLdb.connect(host="localhost",
+                         user=username,
+                         passwd=password,
+                         db=db_name,
+                         port=3306)
+
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM `states` ORDER BY id ASC")
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row)
+    cursor.close()
+    db.close()
 
 if __name__ == "__main__":
-    user, pwd, data = argv[1], argv[2], argv[3]  # arguments
-    db = mdb.connect(user=user, passwd=pwd, db=data)  # connection
-    cursor = db.cursor()  # Cursor class
-    cursor.execute("SELECT * FROM `states`")  # execute query
-    [print(record) for record in cursor.fetchall()]  # print records
-    db.close()  # close connection
+    credentials = sys.argv
+    username = sys.argv[1]
+    passwd = sys.argv[2]
+    db_name = sys.argv[3]
+    get_states(username, passwd, db_name)
